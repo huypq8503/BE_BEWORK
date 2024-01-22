@@ -73,7 +73,7 @@ class RegisterCandidateController extends Controller
             // return redirect(env('CLIENT_HOST') . "/login");
             // return redirect()->to(env('CLIENT_HOST') . "/login");
             return "<script>alert('Kích hoạt tài khoản thành công, Vui lòng đăng nhập');</script>" . redirect()->to(env('CLIENT_HOST') . "/login");
-        } elseif ($candidate->remember_token == null) {
+        } else {
             return "<script>alert('Tài khoản đã được kích hoạt, Vui lòng không kích hoạt lại');</script>" . redirect()->to(env('CLIENT_HOST') . "/login");
         }
     }
