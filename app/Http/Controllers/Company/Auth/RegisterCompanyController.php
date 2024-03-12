@@ -71,7 +71,7 @@ class RegisterCompanyController extends Controller
                 'status' => 1,
             ]);
             return "<script>alert('Kích hoạt tài khoản thành công, Vui lòng đăng nhập');</script>" . redirect()->to(env('CLIENT_HOST') . "/business/signin");
-        } else{
+        } elseif ($company->remember_token == null) {
             return "<script>alert('Tài khoản đã được kích hoạt, Vui lòng không kích hoạt lại');</script>" . redirect()->to(env('CLIENT_HOST') . "/business/signin");
         }
     }
