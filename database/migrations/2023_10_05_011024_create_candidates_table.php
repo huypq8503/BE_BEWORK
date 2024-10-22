@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->string('google_id')->nullable();
             $table->string('image', 255)->nullable();
-            $table->integer('status')->default(1)->comment('0: pending, 1: active, 2: block');
+            $table->integer('status')->default(0)->comment('0: pending, 1: active, 2: block');
             $table->integer('main_cv')->nullable();
             $table->integer('find_job')->default(0)->comment('0:tắt tự động tìm việc, 1:bật tự động tìm việc');
             $table->rememberToken();
